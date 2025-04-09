@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - SecurePaste{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto flex-1 flex flex-col justify-center">
+    <div class="glass-effect p-8 rounded-xl">
+        <h1 class="text-8xl font-bold tracking-tight mb-6 gradient-text">{{ code }}</h1>
+        <h2 class="text-3xl font-bold tracking-tight mb-4">{{ title }}</h2>
+        <p class="text-xl text-gray-400 mb-8">{{ message }}</p>
+        
+        <a href="{{ button_url }}" class="inline-block w-full text-center px-10 py-5 btn-primary rounded-xl text-xl font-medium hover-scale">
+            {{ button_text }}
+        </a>
+    </div>
+</div>
+{% endblock %} 

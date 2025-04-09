@@ -1,0 +1,6 @@
+quart
+motor
+python-dotenv
+cryptography
+bcrypt
+python-dateutil

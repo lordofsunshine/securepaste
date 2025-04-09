@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Paste - SecurePaste{% endblock %}
+
+{% block meta_title %}Create New Secure Paste - SecurePaste{% endblock %}
+{% block meta_description %}Create a new secure paste with end-to-end encryption, password protection, and customizable expiration time. Share your content securely.{% endblock %}
+{% block meta_keywords %}create secure paste, encrypted sharing, secure text sharing, temporary text storage, password protected paste{% endblock %}
+
+{% block og_title %}Create New Secure Paste - SecurePaste{% endblock %}
+{% block og_description %}Create a new secure paste with end-to-end encryption, password protection, and customizable expiration time. Share your content securely.{% endblock %}
+
+{% block twitter_title %}Create New Secure Paste - SecurePaste{% endblock %}
+{% block twitter_description %}Create a new secure paste with end-to-end encryption, password protection, and customizable expiration time. Share your content securely.{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto flex-1 flex flex-col justify-center py-8 px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Create New Paste</h1>
+        <p class="text-lg sm:text-xl text-gray-400">Fill out the form below to create a secure paste</p>
+    </div>
+    
+    <form method="POST" class="space-y-8">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <div class="glass-effect p-6 sm:p-8 rounded-xl space-y-6 sm:space-y-8">
+            <div class="space-y-4">
+                <label for="title" class="block text-lg font-medium text-gray-300">Title (3-12 characters)</label>
+                <input type="text" id="title" name="title" maxlength="12" required
+                    class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl focus:outline-none text-base sm:text-lg"
+                    placeholder="Enter a title">
+            </div>
+            
+            <div class="space-y-4">
+                <label for="content" class="block text-lg font-medium text-gray-300">Content (max 30,000 characters)</label>
+                <textarea id="content" name="content" rows="12" maxlength="30000" required
+                    class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-mono focus:outline-none text-base sm:text-lg"
+                    placeholder="Enter your text here"></textarea>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="space-y-4">
+                    <label for="password" class="block text-lg font-medium text-gray-300">Password (optional)</label>
+                    <input type="password" id="password" name="password" 
+                        class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl focus:outline-none text-base sm:text-lg"
+                        placeholder="Set a password">
+                </div>
+                
+                <div class="space-y-4">
+                    <label for="expiration" class="block text-lg font-medium text-gray-300">Expiration Time</label>
+                    <select id="expiration" name="expiration" 
+                        class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl focus:outline-none text-base sm:text-lg">
+                        <option value="1h">1 hour</option>
+                        <option value="1d" selected>1 day</option>
+                        <option value="1m">1 month</option>
+                        <option value="3m">3 months</option>
+                        <option value="6m">6 months</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="w-full py-4 sm:py-5 btn-primary rounded-xl text-lg sm:text-xl font-medium hover-scale">
+            Create Paste
+        </button>
+    </form>
+</div>
+{% endblock %} 

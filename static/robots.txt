@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /create
+Allow: /static/
+Disallow: /paste/
+Disallow: /raw/
+Disallow: /admin/
+
+Sitemap: https://securepaste.icu/sitemap.xml 
